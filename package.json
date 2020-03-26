@@ -1,29 +1,58 @@
 {
-  "name": "embark-mythx",
-  "version": "1.0.4",
-  "description": "MythX plugin for Status Embark",
-  "repository": "github:flex-dapps/embark-mythx",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "embark",
-    "embark-plugin",
-    "mythx",
-    "smart contract",
-    "security analysis",
-    "solidity"
-  ],
-  "author": "sebastian@flexdapps.com",
+  "version": "2.0.0",
   "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "formatters",
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build"
+  },
+  "peerDependencies": {},
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true
+  },
+  "name": "embark-mythx",
+  "author": "emizzle",
+  "module": "dist/embark-mythx.esm.js",
+  "devDependencies": {
+    "@types/command-line-args": "5.0.0",
+    "@types/date-fns": "2.6.0",
+    "@types/jest": "^25.1.4",
+    "husky": "^4.2.3",
+    "tsdx": "^0.13.0",
+    "tslib": "^1.11.1",
+    "typescript": "^3.8.3"
+  },
   "dependencies": {
-    "armlet": "^2.7.0",
-    "command-line-args": "^5.1.1",
-    "dotenv": "^7.0.0",
-    "eslint": "^5.16.0",
-    "minimist": "^1.2.0",
-    "remix-lib": "^0.4.6",
-    "tiny-async-pool": "^1.0.4"
+    "ascii-table": "0.0.9",
+    "chalk": "3.0.0",
+    "command-line-args": "5.1.1",
+    "command-line-usage": "6.1.0",
+    "date-fns": "2.11.1",
+    "dotenv": "8.2.0",
+    "embark-core": "5.3.0-nightly.13",
+    "embark-logger": "5.3.0-nightly.12",
+    "eslint": "6.8.0",
+    "mythxjs": "1.3.11",
+    "remix-lib": "0.4.23",
+    "tiny-async-pool": "1.1.0"
   }
 }
