@@ -1,6 +1,26 @@
 {
-  "version": "2.0.0",
+  "name": "embark-mythx",
+  "description": "Status Embark plugin for MythX",
+  "version": "2.0.1",
+  "author": "eric.mastro@gmail.com",
+  "contributors": [
+    "sebastian@flexdapps.com"
+  ],
+  "repository": {
+    "url": "https://github.com/embarklabs/embark-mythx",
+    "type": "git"
+  },
+  "homepage": "https://github.com/embarklabs/embark-mythx/blob/master/README.md",
+  "bugs": "https://github.com/embarklabs/embark-mythx/issues",
   "license": "MIT",
+  "keywords": [
+    "embark",
+    "embark-plugin",
+    "mythx",
+    "smart contract",
+    "security analysis",
+    "solidity"
+  ],
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "files": [
@@ -29,8 +49,6 @@
     "semi": true,
     "singleQuote": true
   },
-  "name": "embark-mythx",
-  "author": "emizzle",
   "module": "dist/embark-mythx.esm.js",
   "devDependencies": {
     "@types/command-line-args": "5.0.0",
