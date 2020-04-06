@@ -182,7 +182,19 @@ export default class AnalyzeController extends Controller {
       let contractName;
       let contract;
       const contractList = compilationResult.contracts[inputFilePath];
+      const contractListNames = Object.keys(contractList);
       const sources: { [key: string]: CompiledSource } = {};
+
+      // when there are multiple contract definitions in one contract file,
+      // add the file and contract names to a dictionary to later display a
+      // warning to the user that MythX may not support this
+      if (contractListNames.length > 1) {
+        this.logger.warn(
+          `Contract file '${inputFilePath}' contains multiple contract definitions ('${contractListNames.join(
+            "', '"
+          )}'). MythX may not support this case and therefore the results produced may not be correct.`
+        );
+      }
 
       for (const [compiledContractName, compiledContract] of Object.entries(
         contractList
@@ -210,16 +222,6 @@ export default class AnalyzeController extends Controller {
         ) {
           contract = compiledContract;
           contractName = compiledContractName;
-
-          // when there are multiple contract definitions in one contract file,
-          // add the file and contract names to a dictionary to later display a
-          // warning to the user that MythX may not support this
-          if (contract) {
-            if (!multipleContractDefs[inputFilePath]) {
-              multipleContractDefs[inputFilePath] = [];
-            }
-            multipleContractDefs[inputFilePath].push(compiledContractName);
-          }
         }
       }
       compilationResults.push(
