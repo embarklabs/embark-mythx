@@ -145,7 +145,7 @@ export default class ReportController extends Controller {
    */
   private issue2EsLint(issue: any, sourceCode: string, locations: any) {
     const swcLink = issue.swcID
-      ? 'https://swcregistry.io/SWC-registry/docs/' + issue.swcID
+      ? 'https://swcregistry.io/docs/' + issue.swcID
       : 'N/A';
 
     const esIssue = {

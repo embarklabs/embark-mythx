@@ -42,9 +42,9 @@ Retrieving Hack analysis results...
 Rendering Bank analysis report...
 
 Bank.sol
-  18:12  error    persistent state read after call               https://swcregistry.io/SWC-registry/docs/SWC-107
-  14:28  warning  A call to a user-supplied address is executed  https://swcregistry.io/SWC-registry/docs/SWC-107
-   1:0   warning  A floating pragma is set                       https://swcregistry.io/SWC-registry/docs/SWC-103
+  18:12  error    persistent state read after call               https://swcregistry.io/docs/SWC-107
+  14:28  warning  A call to a user-supplied address is executed  https://swcregistry.io/docs/SWC-107
+   1:0   warning  A floating pragma is set                       https://swcregistry.io/docs/SWC-103
 
 <unknown>
   -1:0  warning  You are running MythX in free mode. Analysis depth is limited in this mode so some issues might not be detected. Upgrade to a Dev or Pro plan to unlock in-depth analysis and higher rate limits. https://mythx.io/plans  N/A
