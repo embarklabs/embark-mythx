@@ -4,8 +4,16 @@
   "version": "2.1.0",
   "author": "eric.mastro@gmail.com",
   "contributors": [
-    "eric.mastro@gmail.com",
-    "sebastian@flexdapps.com"
+    {
+      "name": "Eric Mastro",
+      "email": "eric.mastro@gmail.com",
+      "url": "https://github.com/emizzle"
+    },
+    {
+      "name": "Sebastian Mueller",
+      "email": "sebastian@flexdapps.com",
+      "url": "https://github.com/semuelle"
+    }
   ],
   "repository": {
     "url": "https://github.com/embarklabs/embark-mythx",
