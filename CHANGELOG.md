@@ -1,5 +1,12 @@
 # Change log
 
+# [2.1.1](https://github.com/embarklabs/embark-mythx/compare/v2.1.1...v2.1.0) (2020-04-08)
+
+### Chores
+
+- `README.md` update.
+- `package.json` contributors update.
+
 # [2.1.0](https://github.com/embarklabs/embark-mythx/compare/v2.0.3...v2.1.0) (2020-04-07)
 
 ### Features
