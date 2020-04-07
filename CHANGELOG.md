@@ -1,5 +1,13 @@
 # Change log
 
+# [2.1.0](https://github.com/embarklabs/embark-mythx/compare/v2.0.3...v2.1.0) (2020-04-07)
+
+### Features
+- Remove MythX free mode warning
+
+### Fixes
+- Update SWC registry URL in analysis output.
+
 # [2.0.3](https://github.com/embarklabs/embark-mythx/compare/v2.0.2...v2.0.3) (2020-04-06)
 
 ### Chores
