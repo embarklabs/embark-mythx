@@ -18,8 +18,8 @@
     "embark",
     "embark-plugin",
     "mythx",
-    "smart contract",
-    "security analysis",
+    "smart-contract",
+    "security-analysis",
     "solidity"
   ],
   "main": "dist/index.js",

@@ -46,20 +46,14 @@ Bank.sol
   14:28  warning  A call to a user-supplied address is executed  https://swcregistry.io/docs/SWC-107
    1:0   warning  A floating pragma is set                       https://swcregistry.io/docs/SWC-103
 
-<unknown>
-  -1:0  warning  You are running MythX in free mode. Analysis depth is limited in this mode so some issues might not be detected. Upgrade to a Dev or Pro plan to unlock in-depth analysis and higher rate limits. https://mythx.io/plans  N/A
-
-✖ 4 problems (1 error, 3 warnings)
+✖ 3 problems (1 error, 2 warnings)
 
 Rendering Hack analysis report...
 
 Hack.sol
   1:0  warning  A floating pragma is set  https://swcregistry.io/SWC-registry/docs/SWC-103
 
-<unknown>
-  -1:0  warning  You are running MythX in free mode. Analysis depth is limited in this mode so some issues might not be detected. Upgrade to a Dev or Pro plan to unlock in-depth analysis and higher rate limits. https://mythx.io/plans  N/A
-
-✖ 2 problems (0 errors, 2 warnings)
+✖ 1 problem (0 errors, 1 warning)
 
 Done!
 ```
@@ -109,7 +103,7 @@ Verify options
   -c, --no-cache-lookup    Deactivate MythX cache lookups (default: false).                              
   -d, --debug              Print MythX API request and response.                                         
   -l, --limit number       Maximum number of concurrent analyses (default: 10).                          
-  --timeout number         Timeout in secs to wait for analysis to finish (default: smart default based  
+  -t, --timeout number         Timeout in secs to wait for analysis to finish (default: smart default based  
                            on mode).   
 ```
 
@@ -120,10 +114,13 @@ Verify options
 $ verify
 
 # 'ERC20' and 'Ownable' full analysis
-$ verify ERC20 Ownable --full
+$ verify --mode full ERC20 Ownable
 
 # Check status of previous or ongoing analysis
 $ verify status ef5bb083-c57a-41b0-97c1-c14a54617812
+
+# Get list of 20 previous analyses
+$ verify list
 ```
 
 ## `embark-mythx` Development
