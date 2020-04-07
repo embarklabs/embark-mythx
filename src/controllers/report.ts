@@ -42,25 +42,43 @@ export default class ReportController extends Controller {
   }
 
   public async render(
-    issues: any,
+    report: any,
     format: Format,
     inputs: CompilationInputs,
     analysis: Analysis | null = null
   ) {
     this.logger.info(
-      `Rendering ${analysis?.contractName ?? ''} analysis report...`
+      `Rendering ${
+        analysis?.contractName ? analysis.contractName + ' ' : ''
+      }analysis report...\n`
+    );
+
+    // filter out the free mode message from MythX (sorry)
+    report.map(
+      (issueList: any) =>
+        (issueList.issues = issueList.issues.filter(
+          (issue: any) =>
+            !(
+              issue.swcID === '' &&
+              issue.description.head.includes(
+                'You are running MythX in free mode.'
+              )
+            )
+        ))
     );
 
     const functionHashes = analysis?.getFunctionHashes() ?? {};
 
     const data = { functionHashes, sources: { ...inputs } };
 
-    const uniqueIssues = this.formatIssues(data, issues);
+    const uniqueIssues = this.formatIssues(data, report);
 
     if (uniqueIssues.length === 0) {
       this.logger.info(
         chalk.green(
-          `✔ No errors/warnings found for contract: ${analysis?.contractName}`
+          `✔ No errors/warnings found${
+            analysis?.contractName ? ' for ' + analysis.contractName : ''
+          }!`
         )
       );
     } else {
@@ -220,7 +238,7 @@ export default class ReportController extends Controller {
       location.sourceType === 'solidity-file' &&
       location.sourceFormat === 'text';
 
-    report.issues.forEach((issue: any) => {
+    (report?.issues ?? []).forEach((issue: any) => {
       const locations = issue.locations.filter(textLocationFilterFn);
       const location = locations.length ? locations[0] : undefined;
 
